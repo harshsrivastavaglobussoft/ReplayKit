@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReplayKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-hg-2ta">
+                                <rect key="frame" x="0.0" y="40" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Je-UA-ye4">
+                                <rect key="frame" x="10" y="71" width="355" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IfH-vX-7sa"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Orange"/>
+                                    <segment title="Green"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="DhI-ZL-EgC"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-75-VkF">
+                                <rect key="frame" x="10" y="121" width="355" height="189.5"/>
+                                <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mhv-75-VkF" secondAttribute="height" multiplier="15:8" id="KE7-lW-6FS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m30-Dc-F0O">
+                                <rect key="frame" x="10" y="340.5" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elE-jh-u4H">
+                                <rect key="frame" x="163" y="381.5" width="51" height="31"/>
+                                <color key="onTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <color key="thumbTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j65-TI-MBr">
+                                <rect key="frame" x="147.5" y="452.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="j65-TI-MBr" secondAttribute="height" multiplier="1:1" id="GKF-47-XsH"/>
+                                    <constraint firstAttribute="width" constant="80" id="rtd-KY-ldi"/>
+                                </constraints>
+                                <state key="normal" image="record"/>
+                                <state key="selected" image="record_on"/>
+                                <connections>
+                                    <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2l-uO-74u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6aQ-hg-2ta" secondAttribute="trailing" id="1PO-2k-5cE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mhv-75-VkF" secondAttribute="trailing" constant="10" id="3ic-Xl-ezg"/>
+                            <constraint firstItem="m30-Dc-F0O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8AT-fF-uPg"/>
+                            <constraint firstItem="elE-jh-u4H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HCy-Mk-Ggy"/>
+                            <constraint firstItem="elE-jh-u4H" firstAttribute="top" secondItem="m30-Dc-F0O" secondAttribute="bottom" constant="20" id="N1B-ka-M7h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Je-UA-ye4" secondAttribute="trailing" constant="10" id="UqE-t3-mmm"/>
+                            <constraint firstItem="1Je-UA-ye4" firstAttribute="top" secondItem="6aQ-hg-2ta" secondAttribute="bottom" constant="10" id="WhC-jG-tnr"/>
+                            <constraint firstItem="mhv-75-VkF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XE5-Om-M7C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m30-Dc-F0O" secondAttribute="trailing" constant="10" id="bty-JP-G16"/>
+                            <constraint firstItem="6aQ-hg-2ta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dWY-Jv-dk9"/>
+                            <constraint firstItem="6aQ-hg-2ta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="doA-ac-RXa"/>
+                            <constraint firstItem="m30-Dc-F0O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fw0-FQ-Msv"/>
+                            <constraint firstItem="j65-TI-MBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ibH-XT-rka"/>
+                            <constraint firstItem="j65-TI-MBr" firstAttribute="top" secondItem="elE-jh-u4H" secondAttribute="bottom" constant="40" id="l4a-eF-f0w"/>
+                            <constraint firstItem="1Je-UA-ye4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nke-nJ-nO6"/>
+                            <constraint firstItem="m30-Dc-F0O" firstAttribute="top" secondItem="mhv-75-VkF" secondAttribute="bottom" constant="30" id="sAR-ci-AiH"/>
+                            <constraint firstItem="mhv-75-VkF" firstAttribute="top" secondItem="1Je-UA-ye4" secondAttribute="bottom" constant="10" id="xnz-dP-YNM"/>
+                            <constraint firstItem="6aQ-hg-2ta" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1T-Dn-x57"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="boxView" destination="mhv-75-VkF" id="wV6-vC-sIT"/>
+                        <outlet property="recordButton" destination="j65-TI-MBr" id="gp4-Td-7mJ"/>
+                        <outlet property="segmentController" destination="1Je-UA-ye4" id="NDL-vT-Zr9"/>
+                        <outlet property="statusLabel" destination="6aQ-hg-2ta" id="zzA-8D-eSs"/>
+                        <outlet property="toggleSwitch" destination="elE-jh-u4H" id="jJe-Dy-xhd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="record" width="50" height="50"/>
+        <image name="record_on" width="50" height="50"/>
+    </resources>
+</document>
